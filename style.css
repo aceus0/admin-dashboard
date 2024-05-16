@@ -77,6 +77,7 @@ body {
     grid-template-columns: minmax(200px, 1fr) 5fr;
     grid-template-rows: 1fr 5fr;
     font-family: 'roboto';
+    background-color: var(--light)
 }
 
 
@@ -157,11 +158,12 @@ section.header {
     background-color: var(--white);
     grid-column: 2/3;
     grid-row: 1/2;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
 }
 
 div.search {
     display: grid;
-    grid-template-columns: minmax(50px, 1rem) minmax(400px, 8fr);
+    grid-template-columns: minmax(50px, 1rem) minmax(330px, 8fr);
     align-items: center;
     justify-items: center;
 }
@@ -203,14 +205,19 @@ img.profile-pic {
 
 div.user-greeting {
     display: grid;
-    grid-template-columns: minmax(56px, 1fr) minmax(2rem, 8fr);
+    grid-template-columns: minmax(75px, 1rem) minmax(2rem, 8fr);
     align-items: center;
+}
+
+div.user-greeting>img {
+    justify-self: center;
 }
 
 .name-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-self: flex-start;
     gap: .5rem;
 }
 
@@ -239,7 +246,6 @@ section.content {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 12fr 1fr;
-    background-color: var(--light);
 }
 
 div.titles {
