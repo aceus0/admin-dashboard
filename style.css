@@ -58,6 +58,11 @@ body {
     grid-template-rows: 1fr 4fr;
 }
 
+.dash {
+    width: 10px;
+    height: 10px;
+}
+
 section.sidebar {
     display: grid;
     background-color: red;
@@ -119,7 +124,7 @@ div.buttons {
 section.content {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 12fr;
+    grid-template-rows: 1fr 12fr 1fr;
     background-color: blue;
 }
 
@@ -152,4 +157,21 @@ div.side-content {
 
 div.announcements {
     display: grid;
+}
+
+div.trending {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr;
+}
+
+div.trends {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+div.footer {
+    grid-column: 1/4;
 }
