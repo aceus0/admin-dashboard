@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, input {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -47,26 +47,39 @@ table {
 	border-spacing: 0;
 }
 
+a {
+text-decoration: none;
+color: inherit;
+}
+
+
 /* End Reset */
+
+@font-face {
+    font-family: 'roboto';
+    src: url('assets/fonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('assets/fonts/roboto-medium--webfont.woff') format('woff');
+    font-weight: ;
+    font-style: normal;
+
+}
 
 :root {
     --strong: #312e81;
     --light: #c7d2fe;
-    --white: #eef2ff;
+    --white: #ffffff;
 }
 
 body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: minmax(200px, 1fr) 5fr;
+    grid-template-rows: 1fr 5fr;
+    font-family: 'roboto';
 }
 
-.dash {
-    width: 10px;
-    height: 10px;
-}
+
 
 section.sidebar {
     display: grid;
@@ -74,11 +87,72 @@ section.sidebar {
     grid-template-rows: 1fr 6fr 2fr;
     grid-row: 1/3;
     grid-column: 1/2;
+    color: var(--white);
+}
+
+div.dashboard {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    align-items: center;
+}
+
+
+div.dash>a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    margin-left: .8rem;
+    gap: .5rem;
+    font-size: 1.5rem;
+
+}
+
+div.dash>a>img {
+    width: 3rem;
+    height: 3rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(218deg) brightness(109%) contrast(101%);
+
+}
+
+div.nav-top {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr) 6fr;
+}
+
+div.nav-bot {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+div.nav-top>a>*, div.nav-bot>a>* {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    margin-left: 1.5rem;
+    gap: 1rem;
+    font-size: 1.2rem;
+
+}
+
+
+.sidebar img {
+    width: 1.6rem;
+    height: 1.6rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(218deg) brightness(109%) contrast(101%);
+}
+.header img {
+    width: 1.6rem;
+    height: 1.6rem;
+    filter: brightness(0) saturate(100%)
 }
 
 section.header {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr .6fr;
     grid-template-rows: 1fr 1fr;
     background-color: var(--white);
     grid-column: 2/3;
@@ -87,9 +161,23 @@ section.header {
 
 div.search {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: minmax(50px, 1rem) minmax(400px, 8fr);
     align-items: center;
     justify-items: center;
+}
+
+div.search>a {
+    justify-self: end;
+    margin-right: 10px;
+}
+
+div.search>input {
+    background-color: var(--light);
+    border: var(--light);
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 20rem;
+    justify-self: start;
 }
 
 div.img {
@@ -100,7 +188,13 @@ div.user {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem
+    gap: 3rem;
+    text-wrap: wrap;
+}
+
+img.profile-pic {
+    height: 3.5rem;
+    width: 3.5rem;
 }
 
 .name {
@@ -109,7 +203,8 @@ div.user {
 
 div.user-greeting {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: minmax(56px, 1fr) minmax(2rem, 8fr);
+    align-items: center;
 }
 
 .name-box {
@@ -124,6 +219,20 @@ div.buttons {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    margin-right: .5rem;
+}
+
+div.buttons>button {
+    background-color: var(--strong);
+    color: var(--white);
+    border: var(--strong) 1rem;
+    border-radius: 1rem;
+    width: 4.5rem;
+    height: 2rem;
+}
+
+div.buttons>button:hover{
+    border: 2px solid var(--light);
 }
 
 section.content {
