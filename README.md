@@ -1,9 +1,9 @@
 # admin-dashboard
-##Admin Dashboard project for The Odin Project
+## Admin Dashboard project for The Odin Project
 
 Utilized a mix of CSS Grid and CSS Flexbox to create this layout. 
 
-###Things learned:
+### Things learned:
 
 1. I need to improve my choice of styling selectors. This will likely be the last time I use `<div>` tags and `.class` for like everything. Styling will be easier if I use more `<h>` or `<p>` elements.
 
