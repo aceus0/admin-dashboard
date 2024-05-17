@@ -177,7 +177,7 @@ div.search>input {
     background-color: var(--light);
     border-radius: 1.5rem;
     width: 100%;
-    max-width: 20rem;
+    max-width: 30rem;
     justify-self: start;
 }
 
@@ -191,6 +191,7 @@ div.user {
     align-items: center;
     gap: 3rem;
     text-wrap: wrap;
+    font-weight: bold;
 }
 
 img.profile-pic {
@@ -198,9 +199,6 @@ img.profile-pic {
     width: 3.5rem;
 }
 
-.name {
-    font-size: inherit;
-}
 
 div.user-greeting {
     display: grid;
@@ -218,6 +216,12 @@ div.user-greeting>img {
     justify-content: center;
     justify-self: flex-start;
     gap: .5rem;
+    font-size: .8rem;
+}
+
+.name-box>div.name {
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 div.buttons {
@@ -246,6 +250,8 @@ section.content {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 12fr 1fr;
     gap: 1rem;
+    padding-left: 1rem;
+    line-height: 1rem;
 }
 
 div.titles {
@@ -254,7 +260,11 @@ div.titles {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: end;
+    gap: 1rem;
+    font-weight: bold;
 }
+
+
 
 div.projects {
     grid-row: 2/3;
@@ -264,11 +274,13 @@ div.projects {
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 1rem;
     row-gap: 1rem;
+    
 }
 
 div.projects>div.project>div.title{
     grid-column: 2/3;
     align-self: end;
+    font-weight: bold;
 }
 
 div.projects>div.project>div.description{
@@ -279,8 +291,19 @@ div.projects>div.project>div.description{
 
 div.projects>div.project>div.controls{
     grid-column: 2/3;
-    align-self: end;
+    align-self: start;
     justify-self: end;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+div.projects>div.project>div.controls>img{
+    height: auto;
+    width: 100%;
+    flex-shrink: 1;
+    max-width: 1.3rem;
+    cursor: pointer;
 }
 
 div.project {
@@ -288,6 +311,10 @@ div.project {
     background-color: var(--white);
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr 15fr 1fr;
+    border-left: .5rem solid orange;
+    border-radius: .5rem;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    
 }
 
 div.side-content {
@@ -295,11 +322,36 @@ div.side-content {
     grid-row: 2/3;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    
 }
 
 div.announcements {
     display: grid;
     background-color: var(--white);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    border-radius: .5rem;
+
+}
+
+div.announcement {
+    display: grid;
+    grid-template-rows: .5fr 1fr .5fr;
+    grid-template-columns: 1fr 15fr 1fr;
+}
+
+div.announcement>div.atitle {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    align-self: end;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+div.announcement>div.adesc {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    align-self: start;
+    font-size: .6rem;
 }
 
 div.trending {
@@ -308,12 +360,43 @@ div.trending {
     display: grid;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr;
+    
+}
+
+div.trending-header {
+    align-self: end;
+    padding-bottom: .5rem;
+    font-weight: bold;
 }
 
 div.trends {
     display: grid;
     background-color: var(--white);
     grid-template-rows: repeat(4, 1fr);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    border-radius: .5rem;
+}
+
+div.trend {
+    display: grid;
+    grid-template-columns: 1fr 4fr 11fr 1fr;
+    align-items: center;
+}
+
+div.tprofile {
+    grid-column: 2/3;
+    justify-self: center;
+}
+
+div.updown {
+    grid-column: 3/4;
+    justify-self: start;
+    font-size: .8rem;
+    font-weight: lighter;
+}
+
+div.updown>div.tuser {
+    font-weight: bold;
 }
 
 div.footer {
